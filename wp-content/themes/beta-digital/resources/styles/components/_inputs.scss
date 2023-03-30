@@ -1,0 +1,31 @@
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea {
+   background-color: white;
+   border: 1px solid $primary-color;
+   box-sizing: border-box;
+   color: $primary-color;
+   @include border-radius(12px);
+   font-weight: 600;
+   padding: 10px 15px;
+   width: 100%;
+
+   &:focus {
+      outline: none; 
+  }
+}
+
+
+::-webkit-input-placeholder { /* Edge */
+   
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    
+}
+
+::placeholder {
+   
+}
