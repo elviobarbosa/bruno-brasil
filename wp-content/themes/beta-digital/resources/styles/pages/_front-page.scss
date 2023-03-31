@@ -1,42 +1,60 @@
 .front-page {
+    --diff: 80px;
 
     &__grid {
-        display: grid;
-        gap: 25px;
-
         @include min-lg {
-            grid-template-columns: repeat(6, 1fr);
+            display: flex;
+            grid-row-gap: 4rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
     }
 
     @include min-lg {
 
         .c-card-video:nth-child(1) {
-            grid-column: auto / span 6;
+            width: 100vw;
         }
         
         .c-card-video:nth-child(2) {
-            grid-column: auto / span 3;
+            margin-left: calc( (var(--diff) / 2) + (var(--diff) / 2) / 2 );
         }
-        
         .c-card-video:nth-child(3) {
-            grid-column: auto / span 3;
+            margin-right: calc( (var(--diff) / 2) + (var(--diff) / 2) / 2  );
         }
-        
+        .c-card-video:nth-child(2),
+        .c-card-video:nth-child(3) {
+            width: calc(50% - var(--diff) );
+        }
+
         .c-card-video:nth-child(4) {
-            grid-column: auto / span 6;
+            margin-left: calc( (var(--diff) / 2) + (var(--diff) / 2) / 2 );
+            width: calc(100vw - ( (var(--diff) / 2) + var(--diff) ) );
         }
-        
+
         .c-card-video:nth-child(5) {
-            grid-column: auto / span 2;
+            margin-left: calc( (var(--diff) / 2) + (var(--diff) / 2) / 2 );
         }
         
-        .c-card-video:nth-child(6) {
-            grid-column: auto / span 2;
+        .c-card-video:nth-child(n+5) {
+            width: calc(33.33% - var(--diff));
         }
-        
+
         .c-card-video:nth-child(7) {
-            grid-column: auto / span 2;
+            margin-right: calc( (var(--diff) / 2) + (var(--diff) / 2) / 2 );
+        }
+        
+    }
+
+    .c-card-video {
+        @include max-lg {
+            margin-bottom: 4rem;
+        }
+
+        &--hero {
+            @include min-lg {
+                margin-bottom: 5vh;
+            }
         }
     }
 }

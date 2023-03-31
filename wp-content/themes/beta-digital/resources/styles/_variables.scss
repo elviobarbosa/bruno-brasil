@@ -1,11 +1,15 @@
 $primary-color: #000;
 $secondary-color: white;
 $dark: #000;
+$gray-800: #171717;
+$gray-500: #686868;
+$gray-300: #ABABAB;
 
 $theme-colors: (
   "primary-color":$primary-color,
   "secundary-color": $secondary-color,
   "dark": $dark,
+  "gray-500": $gray-500,
 );
 
 $imgpath: "../images";

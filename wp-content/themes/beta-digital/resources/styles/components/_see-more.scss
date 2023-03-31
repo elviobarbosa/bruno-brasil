@@ -1,0 +1,31 @@
+.c-more {
+    text-align: center;
+    @include fluid-size(padding-top, 20px, 80px);
+    @include fluid-size(padding-bottom, 20px, 80px);
+
+    a {
+        font-weight: 900;
+        @include fluid-size(font-size, 24px, 64px);
+        color: $secondary-color;
+        text-decoration: none;
+
+        &:hover {
+            -webkit-animation: letter-anim 4s infinite; /* Chrome, Safari, Opera */
+            animation: letter-anim 4s infinite;
+        }
+    }
+}
+
+@-webkit-keyframes letter-anim {
+    50% {
+        letter-spacing: 30px;
+        color: $gray-800;
+    }
+}
+
+@keyframes letter-anim {
+    50% {
+        letter-spacing: 30px;
+        color: $gray-300;
+    }
+}

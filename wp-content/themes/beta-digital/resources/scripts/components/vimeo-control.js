@@ -29,10 +29,30 @@ export default class VimeoControl {
     start($elements) {
 
         if ( isMob() ) {
+            const $firstVideo = new Player('player0');
+            $firstVideo.play().then(function() {
+                // the video was played
+            }).catch(function(error) {
+                switch (error.name) {
+                    case 'PasswordError':
+                        // the video is password-protected and the viewer needs to enter the
+                        // password first
+                        break;
+            
+                    case 'PrivacyError':
+                        // the video is private
+                        break;
+            
+                    default:
+                        // some other error occurred
+                        break;
+                }
+            });
+
             $(window).on("scroll", function() {
                 var scrollPosition =  $(window).scrollTop();
-                $elements.each(function (index) {
-                    
+                
+                $elements.each(function () {
                     const vimeoPlayer = getPlayer(this);
 
                     if ( visibleElement(`#${vimeoPlayer.id}`).full === true ) {
@@ -67,9 +87,9 @@ export default class VimeoControl {
             
             if ( !isMob() ) {
                 $vimeoBox.on('mouseover', () => {
-                    const idPlayer = getPlayer(this);
+                    const vimeoPlayer = getPlayer(this);
 
-                    idPlayer.play().then(function() {
+                    vimeoPlayer.player.play().then(function() {
                         // the video was played
                     }).catch(function(error) {
                         switch (error.name) {
@@ -90,26 +110,9 @@ export default class VimeoControl {
                 });
 
                 $vimeoBox.on('mouseleave', () => {
-                    const idPlayer = getPlayer(this);
+                    const vimeoPlayer = getPlayer(this);
 
-                    idPlayer.pause().then(function() {
-                        // the video was played
-                    }).catch(function(error) {
-                        switch (error.name) {
-                            case 'PasswordError':
-                                // the video is password-protected and the viewer needs to enter the
-                                // password first
-                                break;
-                    
-                            case 'PrivacyError':
-                                // the video is private
-                                break;
-                    
-                            default:
-                                // some other error occurred
-                                break;
-                        }
-                    });
+                    vimeoPlayer.player.pause()
                 })
             }
         });

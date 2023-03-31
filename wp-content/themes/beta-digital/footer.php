@@ -1,68 +1,45 @@
         <footer id="footer" class="footer">
-            <div class="informations">
-                <div class="informations__container">
-                    <div class="informations__left">
-                        <small>Fale com o </small>
-                        <span>COMERCIAL</span>
-                    </div>
-
-                    <div class="informations__right">
-                        <div class="informations__item">
-                            <a href="<?php echo WHATSAPP_LINK_1 ?>">
-                                <?php the_SVG('ico-wapp') ?>
-                                <span>POR WHATSAPP</span>
-                            </a>
-                        </div>
-
-                        <!-- <div class="informations__item">
-                            <a href="/">
-                                <?php the_SVG('ico-email') ?>
-                                <span>POR EMAIL</span>
-                            </a>
-                        </div> -->
-
-                       <!-- <div class="informations__item">
-                            <a href="/">
-                                <?php the_SVG('ico-telefone') ?>
-                                <span>POR TELEFONE</span>
-                            </a>
-                        </div> -->
-
-                       <div class="informations__item">
-                            <a href="<?php echo site_url('/onde-comprar') ?>">
-                                <?php the_SVG('ico-pin') ?>
-                                <span>ONDE COMPRAR</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="footer__container">
-                <div class="footer__nav-container">
-                <?php 
-                    wp_nav_menu( 
-                    array( 
-                        'theme_location' 	=> 'footer-menu',
-                        'menu_class'		=> 'footer__nav',
-                        'container'			=> 'nav',
-                        'container_class' 	=> 'footer__menu'
-                    ) ); 
-                ?>
+                <div class="footer__logo">
+                    <figure>
+                        <img src="<?php echo IMGPATH ?>/logo-color-compact.png" alt="Bruno Brasil">
+                    </figure>
                 </div>
 
-                <div class="footer__brand">
-                    <ul>
-                        <li><a href="<?php echo site_url('/')  ?>" alt="Voltar para o início"><?php the_SVG('logo-reduzida') ?></a></li>
-                        <li><a href="https://www.facebook.com/duraplik.argamassas" target="_blank"><?php the_SVG('ico-facebook') ?></a></li>
-                        <li><a href="https://www.instagram.com/duraplikargamassas/" target="_blank"><?php the_SVG('ico-instagram') ?></a></li>
-                    </ul>
-                    <p><a href="https://g.page/argamassasduraplik?share" target="_blank">Av. Principal - Pref. José Walter<br>Maracanaú - CE, 61931-050</a></p>
+                <div class="footer__contact">
+                    <div class="footer__social">
+                        <p class="footer__title">
+                            <?php _e('FIND ME:') ?>
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="" title="<?php _e('Follow me on Instagram') ?>">
+                                    <?php the_SVG('ico-instagram') ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" title="<?php _e('Twitter') ?>">
+                                <?php the_SVG('ico-twitter') ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" title="<?php _e('Linkedin') ?>">
+                                    <?php the_SVG('ico-youtube') ?>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__immediate">
+                        <p class="footer__title"><?php _e('CONTACT ME:') ?></p>
+                        <ul>
+                            <li><a href="tel:+5585981544771" title="<?php _e('Call me') ?>">+55 85 981544771</a></li>
+                            <li><a href="mailto:bruno@brasil.com" title="<?php _e('Email me') ?>">BRUNO@BRBRASIL.COM</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
         </footer>
-
-        <?php get_template_part('template-parts/products/calc'); ?>
 
     </body>
     <?php wp_footer() ?>
