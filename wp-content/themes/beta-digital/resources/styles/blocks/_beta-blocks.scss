@@ -1,0 +1,8 @@
+.wp-block-beta-digital {
+    &-block-intro {
+        @include fluid-size(font-size, 18px, 36px);
+        line-height: 1.4em;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+}

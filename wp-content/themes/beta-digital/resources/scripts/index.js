@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import Menu from './components/menu';
 import VimeoControl from './components/vimeo-control';
+import Transition from './components/transition';
+import Work from './components/work';
 
 function domReady(fn) {
     // If we're early to the party
@@ -10,6 +12,8 @@ function domReady(fn) {
     if (document.readyState === "interactive" || document.readyState === "complete" ) {
       new Menu();
       new VimeoControl();
+      new Transition();
+      new Work();
     }
 }
 

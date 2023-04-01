@@ -13,7 +13,7 @@ $video_format = [
 ];
 ?>
 
-<main id="front-page">
+<sectcion id="front-page" <?php body_class(); ?> >
     <div class="front-page__grid">
         <?php
         $loop = new WP_Query( array(
@@ -36,9 +36,9 @@ $video_format = [
     </div>
 
     <div class="c-more">
-        <a href="<?php home_url("/work") ?>" >SEE +</a>
+        <a href="<?php echo esc_html( home_url("/work") ) ?>" >SEE +</a>
     </div>
-</main>
+</section>
  
 <?php
 get_footer();

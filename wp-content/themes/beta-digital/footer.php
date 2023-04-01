@@ -1,3 +1,4 @@
+        </main>
         <footer id="footer" class="footer">
             <div class="footer__container">
                 <div class="footer__logo">

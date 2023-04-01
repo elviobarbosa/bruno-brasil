@@ -8,24 +8,41 @@
         @include fluid-size(font-size, 24px, 64px);
         color: $secondary-color;
         text-decoration: none;
+        display: inline-block;
 
         &:hover {
-            -webkit-animation: letter-anim 4s infinite; /* Chrome, Safari, Opera */
-            animation: letter-anim 4s infinite;
+            -webkit-animation: letter-anim 1s infinite; /* Chrome, Safari, Opera */
+            animation: letter-anim 2s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
     }
 }
 
-@-webkit-keyframes letter-anim {
-    50% {
-        letter-spacing: 30px;
-        color: $gray-800;
-    }
-}
+// @-webkit-keyframes letter-anim {
+//     50% {
+//         transform: scale(3);
+//         color: $gray-800;
+//     }
+// }
 
 @keyframes letter-anim {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
     50% {
-        letter-spacing: 30px;
-        color: $gray-300;
+        transform: scale(2);
+        opacity: 0;
+    }
+    51% {
+        transform: scale(.8);
+        opacity: 0;
+    }
+    75% {
+        transform: scale(.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }

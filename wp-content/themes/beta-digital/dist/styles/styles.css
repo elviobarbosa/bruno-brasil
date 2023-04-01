@@ -425,6 +425,43 @@ figure {
   }
 }
 
+.wp-block-embed__wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+.wp-block-embed__wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.wp-block-beta-digital-block-intro {
+  /* stylelint-disable-next-line scss/selector-no-redundant-nesting-selector */
+  line-height: 1.4em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.wp-block-beta-digital-block-intro {
+  font-size: 18px;
+}
+@media screen and (min-width: 375px) {
+  .wp-block-beta-digital-block-intro {
+    font-size: calc(18px + 18 * ((100vw - 375px) / 2525));
+  }
+}
+@media screen and (min-width: 2900px) {
+  .wp-block-beta-digital-block-intro {
+    font-size: 36px;
+  }
+}
+
 .c-card-video {
   --maxvh: 85vh;
   position: relative;
@@ -776,6 +813,7 @@ textarea:focus {
   /* stylelint-disable-next-line scss/selector-no-redundant-nesting-selector */
   color: white;
   text-decoration: none;
+  display: inline-block;
 }
 .c-more a {
   font-size: 24px;
@@ -791,20 +829,30 @@ textarea:focus {
   }
 }
 .c-more a:hover {
-  -webkit-animation: letter-anim 4s infinite; /* Chrome, Safari, Opera */
-  animation: letter-anim 4s infinite;
+  -webkit-animation: letter-anim 1s infinite; /* Chrome, Safari, Opera */
+  animation: letter-anim 2s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-@-webkit-keyframes letter-anim {
-  50% {
-    letter-spacing: 30px;
-    color: #171717;
-  }
-}
 @keyframes letter-anim {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
   50% {
-    letter-spacing: 30px;
-    color: #ABABAB;
+    transform: scale(2);
+    opacity: 0;
+  }
+  51% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 .front-page {
@@ -855,4 +903,31 @@ textarea:focus {
   .front-page .c-card-video--hero {
     margin-bottom: 5vh;
   }
+}
+
+#work-page {
+  width: 90vw;
+  margin: 7rem auto;
+}
+#work-page .c-card-video {
+  position: relative;
+}
+#work-page .c-card-video .flip .back {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@media (min-width: 992px) {
+  #work-page .work__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    gap: 4rem;
+  }
+}
+
+#single-work-page {
+  color: white;
 }

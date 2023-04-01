@@ -31,7 +31,7 @@ function posttype_portfolio()
             'has_archive'       => true,
             'show_in_rest'      => true,
             'hierarchical'      => true,
-            'rewrite'           => array('slug' => 'portfolio', 'with_front' => false),
+            'rewrite'           => array('slug' => 'work', 'with_front' => false),
             'supports'          => array( 'title', 'editor', 'thumbnail', 'excerpet'),
         )
     );

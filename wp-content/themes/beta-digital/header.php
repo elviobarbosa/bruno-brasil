@@ -20,33 +20,35 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body data-barba="wrapper">
 
-<div class="<?php echo is_front_page() ? 'nav-main nav-main--home' : 'nav-main'; ?>">
-	<div class="nav-main__container">
-		<div class="nav-main__logo">
-			<a href="<?php echo site_url('/')  ?>" alt=<?php _e("Back to home") ?>>
-				<?php the_SVG('logo-bw'); ?>
-			</a>
-		</div>
+	<div class="<?php echo is_front_page() ? 'nav-main nav-main--home' : 'nav-main'; ?>">
+		<div class="nav-main__container">
+			<div class="nav-main__logo">
+				<a href="<?php echo site_url('/')  ?>" alt=<?php _e("Back to home") ?>>
+					<?php the_SVG('logo-bw'); ?>
+				</a>
+			</div>
 
-		<div class="nav-main__menu" data-js="js-nav-menu">
-			<?php 
-				wp_nav_menu( 
-				array( 
-					'theme_location' 	=> 'header-menu',
-					'menu_class'		=> 'menu',
-					'container'			=> 'nav',
-					'container_class' 	=> 'main-menu'
-				) ); 
-			?>
-		</div>
-		<div class="nav-main__control">
-			<div class="h-menu js-menu">
-				<span class="h-menu__line"></span>
-				<span class="h-menu__line"></span>
-				<span class="h-menu__line"></span>
+			<div class="nav-main__menu" data-js="js-nav-menu">
+				<?php 
+					wp_nav_menu( 
+					array( 
+						'theme_location' 	=> 'header-menu',
+						'menu_class'		=> 'menu',
+						'container'			=> 'nav',
+						'container_class' 	=> 'main-menu'
+					) ); 
+				?>
+			</div>
+			<div class="nav-main__control">
+				<div class="h-menu js-menu">
+					<span class="h-menu__line"></span>
+					<span class="h-menu__line"></span>
+					<span class="h-menu__line"></span>
+				</div>
 			</div>
 		</div>
 	</div>
- </div>
+
+	<main data-barba="container" data-barba-namespace="frontpage">
